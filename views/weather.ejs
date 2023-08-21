@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="weather">
+        <h1 class="temperature">The temperature in <%=city %> is <%=temperature%> degrees Celcius.</h1>
+        <p><p>The weather is currently <%=description%></p></p>
+        <p><img src="<%= image %>"</p>
+        <section class="weatherTable">
+            <table class="first">
+                <tr>
+                    <th>Temperature</th>
+                    <td><%=mainData.temp%></td>                                                                                              
+                </tr>
+                <tr>
+                    <th>Feels Like</th>
+                    <td><%=mainData.feels_like%></td>                                                                                          
+                </tr>
+                <tr>
+                    <th>Temp Min</th>
+                    <td><%=mainData.temp_min%></td>
+                </tr>
+                <tr>
+                    <th>Temp Max</th>
+                    <td><%=mainData.temp_max%></td>
+                </tr>
+                <tr>
+                    <th>Pressure</th>
+                    <td><%=mainData.pressure%></td>
+                </tr>
+                <tr>
+                    <th>Humidity</th>
+                    <td><%=mainData.humidity%></td>
+                </tr>
+                <tr>
+                    <th>Sea Level</th>
+                    <td><%=mainData.sea_level%></td>
+                </tr>
+                <tr>
+                    <th>Ground Level</th>
+                    <td><%=mainData.grnd_level%></td>
+                </tr>
+            </table>
+            <table class="second">
+                <tr>
+                    <th>Wind Speed</th>
+                    <td><%=wind.speed%></td>
+                </tr>
+                <tr>
+                    <th>Degree</th>
+                    <td><%=wind.deg %></td>
+                </tr>
+                <tr>
+                    <th>Gust</th>
+                    <% if(wind.gust){%>
+                        <td><%=wind.gust %></td>
+                    <%}else{%>
+                        <td>undefined</td>
+                    <%}%>
+                </tr>
+                <tr>
+                    <th>Sunrise</th>
+                    <td><%=other.sys.sunrise %></td>
+                </tr>
+                <tr>
+                    <th>Sunset</th>
+                    <td><%=other.sys.sunset %></td>
+                </tr>
+                <tr>
+                    <th>TimeZone</th>
+                    <td><%=other.timezone %></td>
+                </tr>
+                <tr>
+                    <th>Clouds</th>
+                    <td><%=other.clouds.all %></td>
+                </tr>
+                <tr>
+                    <th>Longitude</th>
+                    <td><%=other.coord.lon %></td>
+                </tr>
+                <tr>
+                    <th>Latitide</th>
+                    <td><%=other.coord.lat%></td>
+                </tr>
+            </table>
+        </section>
+        
+    </div>
+    
+</body>
+</html>
